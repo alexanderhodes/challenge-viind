@@ -1,6 +1,6 @@
 "use client";
 
-import { CustomerPages } from "@/components/customer-pages";
+import { CustomerTree } from "@/components/customer-tree";
 import { Customer } from "@/data/paths";
 import { useQuery } from "@tanstack/react-query";
 
@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <main className="main">
       {data.map((d) => (
-        <CustomerPages key={d.id} customer={d} />
+        <CustomerTree key={d.id} customer={d} />
       ))}
     </main>
   );

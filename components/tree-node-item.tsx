@@ -1,16 +1,16 @@
 "use client";
 
-import { GroupedPage } from "@/utils/customer.util";
+import { PathNode } from "@/utils/customer.util";
 import { FunctionComponent, useState } from "react";
 
 type Props = {
   baseUrl: string;
-  group: GroupedPage;
+  node: PathNode;
 };
 
-export const PagesGroup: FunctionComponent<Props> = ({ baseUrl, group }) => {
+export const TreeNodeItem: FunctionComponent<Props> = ({ baseUrl, node }) => {
   const [open, setOpen] = useState(false);
-  const hasChildren = group.children.length > 0;
+  const hasChildren = node.children.length > 0;
 
   return (
     <div>
@@ -27,17 +27,17 @@ export const PagesGroup: FunctionComponent<Props> = ({ baseUrl, group }) => {
           ) : (
             <span aria-hidden>-</span>
           )}
-          <p>{group.path}</p>
+          <p>{node.path}</p>
         </div>
-        <a href={`${baseUrl}${group.path}`}>Seite aufrufen</a>
+        <a href={`${baseUrl}${node.path}`}>Seite aufrufen</a>
       </div>
       {hasChildren && open && (
         <div style={{ marginLeft: "1.5rem" }}>
-          {group.children.map((child) => (
-            <PagesGroup
-              key={"page-" + child.path}
+          {node.children.map((child) => (
+            <TreeNodeItem
+              key={"node-" + child.path}
               baseUrl={baseUrl}
-              group={child}
+              node={child}
             />
           ))}
         </div>

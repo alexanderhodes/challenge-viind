@@ -1,54 +1,54 @@
 import { Customer } from "@/data/paths";
 
-export type GroupedPage = {
-  parent: string;
+export type PathNode = {
+  segment: string;
   path: string;
-  children: GroupedPage[];
+  children: PathNode[];
 };
 
 // "/" always comes first, everything else alphabetically per level
-const sortNodes = (nodes: GroupedPage[]) => {
+const sortTree = (nodes: PathNode[]) => {
   nodes.sort((a, b) => {
-    if (a.parent === "/") return -1;
-    if (b.parent === "/") return 1;
-    return a.parent.localeCompare(b.parent);
+    if (a.path === "/") return -1;
+    if (b.path === "/") return 1;
+    return a.segment.localeCompare(b.segment);
   });
-  nodes.forEach((node) => sortNodes(node.children));
+  nodes.forEach((node) => sortTree(node.children));
 };
 
-export const groupCustomerPages = (customer: Customer) => {
-  const groupedPages: GroupedPage[] = [];
+export const buildPathTree = (customer: Customer) => {
+  const roots: PathNode[] = [];
 
-  customer.pages.forEach((page) => {
-    const parts = page.page.split("/").filter(Boolean);
+  customer.pages.forEach(({ path }) => {
+    const segments = path.split("/").filter(Boolean);
 
     // "/" has no segments and becomes its own top-level node
-    if (parts.length === 0) {
-      if (!groupedPages.some((group) => group.parent === "/")) {
-        groupedPages.push({ parent: "/", path: "/", children: [] });
+    if (segments.length === 0) {
+      if (!roots.some((root) => root.path === "/")) {
+        roots.push({ segment: "/", path: "/", children: [] });
       }
       return;
     }
 
-    let level = groupedPages;
+    let siblings = roots;
 
-    parts.forEach((part, i) => {
-      let node = level.find((group) => group.parent === part);
+    segments.forEach((segment, i) => {
+      let node = siblings.find((sibling) => sibling.segment === segment);
 
       if (!node) {
         node = {
-          parent: part,
-          path: `/${parts.slice(0, i + 1).join("/")}/`,
+          segment,
+          path: `/${segments.slice(0, i + 1).join("/")}/`,
           children: [],
         };
-        level.push(node);
+        siblings.push(node);
       }
 
-      level = node.children;
+      siblings = node.children;
     });
   });
 
-  sortNodes(groupedPages);
+  sortTree(roots);
 
-  return groupedPages;
+  return roots;
 };

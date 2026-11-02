@@ -1,129 +1,129 @@
 export type Customer = {
   id: string;
   baseUrl: string;
-  pages: { page: string }[];
+  pages: { path: string }[];
 };
 
-export const customer: Customer[] = [
+export const customers: Customer[] = [
   {
     id: "hef-rof",
     baseUrl: "https://www.hef-rof.de",
     pages: [
-      { page: "/" },
-      { page: "/leben-in-hef-rof/" },
-      { page: "/leben-in-hef-rof/bauen-wohnen/" },
+      { path: "/" },
+      { path: "/leben-in-hef-rof/" },
+      { path: "/leben-in-hef-rof/bauen-wohnen/" },
       {
-        page: "/leben-in-hef-rof/einwanderung-aufenthalt-asyl/",
+        path: "/leben-in-hef-rof/einwanderung-aufenthalt-asyl/",
       },
-      { page: "/leben-in-hef-rof/engagement-hobby/" },
+      { path: "/leben-in-hef-rof/engagement-hobby/" },
       {
-        page: "/leben-in-hef-rof/gesundheit-mensch-tier/",
+        path: "/leben-in-hef-rof/gesundheit-mensch-tier/",
       },
-      { page: "/leben-in-hef-rof/kfz-verkehr/" },
+      { path: "/leben-in-hef-rof/kfz-verkehr/" },
       {
-        page: "/leben-in-hef-rof/kinder-jugend-familie/",
-      },
-      {
-        page: "/leben-in-hef-rof/kommunales-jobcenter/",
-      },
-      { page: "/leben-in-hef-rof/ordnung-sicherheit/" },
-      {
-        page: "/leben-in-hef-rof/pflege-senioren-sozialhilfe/",
+        path: "/leben-in-hef-rof/kinder-jugend-familie/",
       },
       {
-        page: "/leben-in-hef-rof/schule-bildung-sport/",
+        path: "/leben-in-hef-rof/kommunales-jobcenter/",
       },
-      { page: "/landkreis-verwaltung/" },
-      { page: "/landkreis-verwaltung/einrichtungen/" },
-      { page: "/landkreis-verwaltung/verwaltung/" },
-      { page: "/landkreis-verwaltung/der-landkreis/" },
-      { page: "/landkreis-verwaltung/politik-wahlen/" },
+      { path: "/leben-in-hef-rof/ordnung-sicherheit/" },
       {
-        page: "/landkreis-verwaltung/karriere-im-landratsamt/",
+        path: "/leben-in-hef-rof/pflege-senioren-sozialhilfe/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/ansprechpersonen-von-a-z/",
+        path: "/leben-in-hef-rof/schule-bildung-sport/",
+      },
+      { path: "/landkreis-verwaltung/" },
+      { path: "/landkreis-verwaltung/einrichtungen/" },
+      { path: "/landkreis-verwaltung/verwaltung/" },
+      { path: "/landkreis-verwaltung/der-landkreis/" },
+      { path: "/landkreis-verwaltung/politik-wahlen/" },
+      {
+        path: "/landkreis-verwaltung/karriere-im-landratsamt/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/service-verwaltung/",
+        path: "/landkreis-verwaltung/verwaltung/ansprechpersonen-von-a-z/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/unsere-leistungen-von-a-z/",
+        path: "/landkreis-verwaltung/verwaltung/service-verwaltung/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/presse/",
+        path: "/landkreis-verwaltung/verwaltung/unsere-leistungen-von-a-z/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/verwaltungsspitze/",
+        path: "/landkreis-verwaltung/verwaltung/presse/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/oeffentliche-bekanntmachungen/",
+        path: "/landkreis-verwaltung/verwaltung/verwaltungsspitze/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/frauen-gleichstellung/",
+        path: "/landkreis-verwaltung/verwaltung/oeffentliche-bekanntmachungen/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/anfahrt-und-lageplaene/",
+        path: "/landkreis-verwaltung/verwaltung/frauen-gleichstellung/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/finanzen-haushalt/",
+        path: "/landkreis-verwaltung/verwaltung/anfahrt-und-lageplaene/",
       },
       {
-        page: "/wirtschaft-zukunftsregion/wirtschaft-zukunftsregion/ausschreibungen-zentrale-vergabestelle/",
+        path: "/landkreis-verwaltung/verwaltung/finanzen-haushalt/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/ansprechpersonen-von-a-z/",
-      },
-      { page: "/wirtschaft-zukunftsregion/" },
-      {
-        page: "/wirtschaft-zukunftsregion/landwirtschaft-forst/",
+        path: "/wirtschaft-zukunftsregion/wirtschaft-zukunftsregion/ausschreibungen-zentrale-vergabestelle/",
       },
       {
-        page: "/wirtschaft-zukunftsregion/reststoffe/",
+        path: "/landkreis-verwaltung/verwaltung/ansprechpersonen-von-a-z/",
+      },
+      { path: "/wirtschaft-zukunftsregion/" },
+      {
+        path: "/wirtschaft-zukunftsregion/landwirtschaft-forst/",
       },
       {
-        page: "/wirtschaft-zukunftsregion/umwelt-naturschutz/",
+        path: "/wirtschaft-zukunftsregion/reststoffe/",
       },
       {
-        page: "/wirtschaft-zukunftsregion/wirtschaft-zukunftsregion/",
+        path: "/wirtschaft-zukunftsregion/umwelt-naturschutz/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/presse/news-archiv/",
+        path: "/wirtschaft-zukunftsregion/wirtschaft-zukunftsregion/",
       },
       {
-        page: "/news/2026/september/stadtradeln-fast-fuenfmal-um-die-welt-rund-190-000-kilometer-im-landkreis-hersfeld-rotenburg-geradelt/",
+        path: "/landkreis-verwaltung/verwaltung/presse/news-archiv/",
       },
       {
-        page: "/news/2026/august/sanierung-und-funktionserweiterung-des-dgh-schletzenrod-kann-beginnen/",
+        path: "/news/2026/september/stadtradeln-fast-fuenfmal-um-die-welt-rund-190-000-kilometer-im-landkreis-hersfeld-rotenburg-geradelt/",
       },
       {
-        page: "/news/2026/august/foerderung-fuer-sanierung-des-denkmalgeschuetzten-backhauses-in-odensachsen/",
-      },
-      { page: "/datenschutz/" },
-      { page: "/erklaerung-barrierefreiheit/" },
-      { page: "/impressum/" },
-      { page: "/widerspruch/" },
-      { page: "/leichte-sprache/" },
-      {
-        page: "/landkreis-verwaltung/verwaltung/presse/",
+        path: "/news/2026/august/sanierung-und-funktionserweiterung-des-dgh-schletzenrod-kann-beginnen/",
       },
       {
-        page: "/landkreis-verwaltung/verwaltung/unsere-leistungen-von-a-z/",
+        path: "/news/2026/august/foerderung-fuer-sanierung-des-denkmalgeschuetzten-backhauses-in-odensachsen/",
+      },
+      { path: "/datenschutz/" },
+      { path: "/erklaerung-barrierefreiheit/" },
+      { path: "/impressum/" },
+      { path: "/widerspruch/" },
+      { path: "/leichte-sprache/" },
+      {
+        path: "/landkreis-verwaltung/verwaltung/presse/",
       },
       {
-        page: "/buergerservice/abteilungen/HES:department:29248",
+        path: "/landkreis-verwaltung/verwaltung/unsere-leistungen-von-a-z/",
       },
       {
-        page: "/news/2026/oktober/abc-cafe-ermoeglicht-menschen-die-integration-in-bad-hersfeld/",
+        path: "/buergerservice/abteilungen/HES:department:29248",
       },
       {
-        page: "/news/2026/oktober/abend-des-sports-2027-nominierungen-sind-ab-sofort-moeglich/",
+        path: "/news/2026/oktober/abc-cafe-ermoeglicht-menschen-die-integration-in-bad-hersfeld/",
       },
       {
-        page: "/news/2026/september/minderjaehrige-im-digitalen-raum/",
+        path: "/news/2026/oktober/abend-des-sports-2027-nominierungen-sind-ab-sofort-moeglich/",
       },
       {
-        page: "/news/2026/september/stadtradeln-fast-fuenfmal-um-die-welt-rund-190-000-kilometer-im-landkreis-hersfeld-rotenburg-geradelt/",
+        path: "/news/2026/september/minderjaehrige-im-digitalen-raum/",
+      },
+      {
+        path: "/news/2026/september/stadtradeln-fast-fuenfmal-um-die-welt-rund-190-000-kilometer-im-landkreis-hersfeld-rotenburg-geradelt/",
       },
     ],
   },
