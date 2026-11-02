@@ -47,3 +47,21 @@ body {
 a {
   color: rgb(42, 42, 229);
 }
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) 2fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.search-button {
+  border-radius: 8px;
+  padding: 4px 16px;
+  background-color: rgb(42, 42, 229);
+  color: #ffffff;
+}
+
+.label {
+  font-weight: 700;
+}

@@ -1,16 +1,22 @@
 "use client";
 
-import { PathNode } from "@/utils/customer.util";
+import { PathNode } from "@/utils/tree.util";
 import { FunctionComponent, useState } from "react";
 
 type Props = {
-  baseUrl: string;
   node: PathNode;
+  selectedPath?: string;
+  onSelect: (path: string) => void;
 };
 
-export const TreeNodeItem: FunctionComponent<Props> = ({ baseUrl, node }) => {
+export const TreeNodeItem: FunctionComponent<Props> = ({
+  node,
+  selectedPath,
+  onSelect,
+}) => {
   const [open, setOpen] = useState(false);
   const hasChildren = node.children.length > 0;
+  const selected = node.path === selectedPath;
 
   return (
     <div>
@@ -27,17 +33,24 @@ export const TreeNodeItem: FunctionComponent<Props> = ({ baseUrl, node }) => {
           ) : (
             <span aria-hidden>-</span>
           )}
-          <p>{node.path}</p>
+          <button
+            type="button"
+            aria-current={selected}
+            style={{ fontWeight: selected ? "bold" : undefined }}
+            onClick={() => onSelect(node.path)}
+          >
+            {node.segment}
+          </button>
         </div>
-        <a href={`${baseUrl}${node.path}`}>Seite aufrufen</a>
       </div>
       {hasChildren && open && (
         <div style={{ marginLeft: "1.5rem" }}>
           {node.children.map((child) => (
             <TreeNodeItem
               key={"node-" + child.path}
-              baseUrl={baseUrl}
               node={child}
+              selectedPath={selectedPath}
+              onSelect={onSelect}
             />
           ))}
         </div>
