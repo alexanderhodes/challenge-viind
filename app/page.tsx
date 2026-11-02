@@ -8,13 +8,9 @@ export default function Home() {
   const { data, error, isPending } = useQuery<Customer[]>({
     queryKey: ["customers"],
     queryFn: async () => {
-      try {
-        const response = await fetch("/api/customers");
-
-        return response.json();
-      } catch (e) {
-        Promise.reject(e);
-      }
+      const response = await fetch("/api/customers");
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
     },
   });
 
