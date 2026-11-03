@@ -3,7 +3,9 @@ import { NextResponse } from "next/server";
 
 const toHostname = (input: string) => {
   try {
-    const url = new URL(input.startsWith("https://") ? input : `https://input`);
+    const url = new URL(
+      input.startsWith("https://") ? input : `https://${input}`,
+    );
     return url.hostname.toLowerCase().replace(/^www\./, "");
   } catch {
     return undefined;
